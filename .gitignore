@@ -1,0 +1,9 @@
+# Ignore Python virtual environment
+venv/
+
+__pycache__/
+*.pyc
+.env
+.DS_Store
+
+auto_docu_output/
