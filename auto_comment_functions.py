@@ -101,7 +101,7 @@ def auto_comment(file_path: Path, auto_docu_root: Path, model: str = "llama3.1:8
         existing_commenting='unknown'
 
     #deterine if existing 
-    prompt = f"""Answer how similar or different the phrase {existing_commenting} is from the phrase {commenting_style}.
+    prompt = f"""Answer how similar or different the phrase {existing_commenting} is from the phrase {commenting_style} in terms of code commenting verbosity.
     Simply reply with very different, different, similar, or very similar. Just give your answer. No explanation is needed.
     """
         
