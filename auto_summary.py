@@ -100,9 +100,7 @@ def summarize_directory(directory: str, exclude_dirs: Optional[List[str]] = None
     Returns:
     None
     """
-    
-    describe_directory_structure(directory)
-    
+        
     # Initialize an empty string to store the summary text
     summary_txt = ""
     
