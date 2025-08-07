@@ -60,3 +60,29 @@ def orchestrate_all(directory: str, exclude_dirs: Optional[List[str]] = None, co
     print("\nDone!")
 
 
+if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Auto-document a Python project directory using Ollama.")
+    parser.add_argument("directory", type=str, help="Path to the directory you want to process.")
+    parser.add_argument(
+        "--exclude_dirs", nargs="*", default=["__pycache__", "venv", ".git"],
+        help="List of subdirectories to exclude."
+    )
+    parser.add_argument(
+        "--commenting_style", type=str, default="moderate",
+        help="Commenting style: 'minimal', 'moderate', or 'verbose'."
+    )
+    parser.add_argument(
+        "--model", type=str, default="llama3.1:8b",
+        help="Ollama model to use (e.g., 'llama3.1:8b', 'mistral', etc.)."
+    )
+
+    args = parser.parse_args()
+
+    orchestrate_all(
+        directory=args.directory,
+        exclude_dirs=args.exclude_dirs,
+        commenting_style=args.commenting_style,
+        model=args.model
+    )
